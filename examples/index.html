@@ -12,10 +12,11 @@
 
 <script>
   const spotify = new SpotifyWrapper({
-    token: 'BQAvnfpiNS3Jw8NA8VT56xtmHmIwyLVd9S1qLu6-zDN-hARckKKcqbsFc8U2BmDM05sjC9uulBKPLNG7mZpnDdtVw4YO13UB6R5TfOEaUbh-NteOruBzJVBRH-whR0aPTTaQvMjsM7AAuqgYRAs'
+    clientId: '502b496270b4450f92de5b8aaaa3de03',
+    clientSecret: 'cf90ccc4ef534f93a1c4f41aa4921b32'
   })
 
-  const albums = spotify.search.albums('Soundgarden');
+  const albums = spotify.search.albums('Pink Floyd');
   const albumsEl = document.getElementById('albums');
 
   albums

@@ -12,7 +12,7 @@ describe('Album', () => {
   let stubedFetch;
   let promise;
 
-  beforeEach( () => {
+  beforeEach(() => {
     spotify = new SpotifyWrapper({
       token: 'foo',
     });
@@ -21,7 +21,7 @@ describe('Album', () => {
     promise = stubedFetch.resolves({ json: () => ({ album: 'name' }) });
   });
 
-  afterEach( () => {
+  afterEach(() => {
     stubedFetch.restore();
   });
 
@@ -50,7 +50,7 @@ describe('Album', () => {
       expect(stubedFetch).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy');
 
-      const album2 = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTk')
+      const album2 = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTk');
       expect(stubedFetch).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTk');
     });
@@ -58,8 +58,8 @@ describe('Album', () => {
     it('should return the correct data from Promise', () => {
       const album = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
       album.then((data) => {
-        expect(data).to.be.eql({ album: 'name'});
-      })
+        expect(data).to.be.eql({ album: 'name' });
+      });
     });
   });
 
@@ -98,7 +98,7 @@ describe('Album', () => {
     it('should return the correct data from Promise', () => {
       const tracks = spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy');
       tracks.then((data) => {
-        expect(data).to.be.eql({ album: 'name'});
+        expect(data).to.be.eql({ album: 'name' });
       });
     });
   });
